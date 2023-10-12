@@ -14,14 +14,12 @@
     background-color: F8FAF0;
     height: 160px;
     display: flex;
-    align-items: center;
-    
+    align-items: center;    
 }
 .logo{
     height: 160px;
     width: 160px;
     cursor: pointer;
-    /* border: 2px solid red; */
     margin-left: -30px;
 }
 nav{
@@ -50,12 +48,10 @@ nav ul li a{
     top: 60%;
 }
 .dis-large{
-    
     font-size: 57px;
     line-height: 64px;
     letter-spacing: -0.25%;
     font-weight: 400;
-    
 }
 .body-large{
     font-size: 16px;
@@ -65,6 +61,7 @@ nav ul li a{
     margin-top: 16px;
 }
 input[type="submit"]{
+    border: 0;
     margin-top: 24px;
     background-color: hsl(60, 73%, 44%);
     color: hsl(261, 100%, 18%);
@@ -76,11 +73,13 @@ input[type="submit"]{
     line-height: 20px;
     letter-spacing: 0.5pt;
     font-weight: 500;
+    cursor: pointer;
 }
 .flex_services{
     background:#F8FAF0;
     margin-top:-9%;
-    height: 700px;
+    height: 768px;
+    position: relative;
 }
 .service_heading{
     font-size: 32px;
@@ -89,23 +88,16 @@ input[type="submit"]{
     letter-spacing: 0.5%;
     text-align: center;
     position: relative;
-    top:120px;
-    
+    top:120px;  
 }
-
 .flex-container {
     display: flex;
-    justify-content: space-between;
-    margin-left: 120px;
-    margin-right: 120px;
-
+    justify-content: space-evenly;
     position: relative;
     top:120px;
-    
-   
-  }
+}
 .flex-container > div {
-    background-color: #f1f1f1;
+    background-color: #EDEFE5;
     width: 384px;
     margin-top: 72px;
     text-align: center;
@@ -131,11 +123,17 @@ input[type="submit"]{
     color: hsl(261, 100%, 18%);
     border-radius: 20px;
     border: 2px solid hsl(270, 4%, 47%);
+    cursor: pointer;
 }
-.view{
-
+.service_buy:hover{
+    background-color:  hsl(60, 73%, 44%);
+}
+.viewmore{
+    position: absolute;
+    bottom: 40px;
+    left: 47%;
+   justify-content: center;
     color:  hsl(256, 34%, 48%);
-    
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 0.1%;
@@ -145,12 +143,8 @@ input[type="submit"]{
     padding-right: 12px;
     background: none;
     border: none;
-    position: absolute;
-    bottom: 20px;
-   
 }
 .about{
-    /* border: 2px solid red; */
     background-color:hsl(0, 0%, 87%);
     margin-top: -9%;
     height: 552px;
@@ -162,8 +156,7 @@ input[type="submit"]{
     letter-spacing: 0.5%;
     text-align: center;
     position: relative;
-    top:120px;
-     
+    top:120px;     
 }
 .lorem{
     font-size: 16px;
@@ -171,10 +164,20 @@ input[type="submit"]{
     line-height: 24px;
     letter-spacing: 0.5%;
     text-align: left;
-    flex-basis: 900px;
-     
+    flex-basis: 900px;     
 }
-
+.readmore{
+    color: rgb(103, 80, 164);
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.1%;
+    font-weight: 500;
+    height: 40px;
+    margin-top: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
 .flex-container1{
     display: flex;
     flex-direction: row;
@@ -183,61 +186,234 @@ input[type="submit"]{
     justify-content: space-between;
     position: relative;
     top:120px;
-  
 }
 .clients{
-    /* border: 2px solid red; */
-   
-    background-color: hsl(72, 50%, 96%);
-    margin-top: -9%;
- 
+    position: relative;
+    min-height: 775px;
+    width: 100%;
+    background:#F8FAF0;
+    overflow: hidden;
 }
-.clients_heading{
+.clients .client_heading{
     font-size: 32px;
     margin-top: 120px;
     line-height: 40px;
     letter-spacing: 0.5%;
     text-align: center;
-    position: relative;
-    top:120px;
-     
 }
-.flex-container2{
-    
+.flex-container-client{
     display: flex;
-    flex-direction: row;
-    margin-top: 72px;
+    justify-content: space-between;
     margin-left: 120px;
     margin-right: 120px;
+    margin-top: 72px;
+}
+.wrapper{
+    margin-top: 72px;
+}
+.wrapper .container-client{
+    background-color: #FFFFFF;
+    position: relative;
+    width: 345px;
+    height: 240px;
+    padding: 30px 20px;
+    transition: 0.3s ease;
     text-align: center;
-    justify-content: space-between;
+}
+.wrapper .container-client .profile{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -10%;
+    width: 100%;
+    display: block;
+}
+.img_box{
+    position: relative;
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    border-radius: 50%;
+    overflow: hidden;
+    top: -20px;
+}
+.img_box >img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    transition: 0.3s ease;
+}
+.person_name{
+    margin-top: 32px;
+    padding: 5px 0;
+    text-transform: capitalize;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 22px;
+}
+.message{
+    margin-top: 16px;
+    color: rgb(0, 0, 0);
+    padding: 0 8px;
+    font-size: 16px;
+    opacity: 0.8;
+}
+.star_pic >img{
+   margin-top: 16px;
+}
+.best{
+  height: 1300px;
+  background-image: url("Images/yyyyyyyyyy.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.best_section{
+    position: relative;
+}
+.best_section > p{
+    margin-left: 35%;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: 0.5%;
+    position: absolute;
+    top:120px;   
+}
+.slider-left{
+    border-radius: 50%;
+    border:2px solid #8d9089;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: 500px;
+    left: 120px;
+}
+.material-symbols-outlined{
+    position: absolute;
+    padding: 15px 5px;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+}
+.slider-right{
+    border-radius: 50%;
+    border:2px solid #74796d;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: 450px;
+    left: 1320px;
+}
+.footer{
+    margin-top: -9%;
+    background-color: hsl(72, 50%, 96%);
+    height: 515px;
+}
+.footer_links{
+    max-width: 1170px;
+    margin-left: 120px;
+    margin-right: 120px;
+    display: flex;
+    flex-wrap: wrap;
     position: relative;
     top:120px;
-   
-  
 }
-.flex-container2 > div {
-    background-color: #f1f1f1;
-    width: 384px;
-    margin: 10px;
-    padding-bottom: 88px;
-  }
-.client_name{
-    margin-top: 115px;
+ul{
+    list-style: none;
+}
+.footer_section{
+    width: 25%;
+}
+.footer_section p{
     font-size: 22px;
     line-height: 28px;
-    font-weight: 400;
-    text-align: center;
-
+    position: relative;
 }
-.client_message{
-    margin-top: 32px;
+.footer_section p::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: red;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+.footer_section ul{
+    margin-top: 16px;
+}
+.footer_section li{
+    margin-top: 10px;
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 0.5%;
-    
+    font-weight: 400;
+    transition: all 0.3s ease;
 }
+.footer_section ul li a{
+    text-decoration: none;
+    color: black;
+    display: block;
+    transition: all 0.3s ease;
 
-
-
+}
+.footer_section ul li:hover{
+    color: crimson;
+    padding-left: 10px;
+}
+.footer_section ul li a:hover{
+    color: crimson;
+    padding-left: 10px;
+}
+.download{
+    margin-top: 24px;
+}
+.img{
+    margin-top: 16px;
+}
+.touch{
+    margin-top: 24px;
+}
+.follow{
+    margin-top: 64px;
+    float: left;
+    margin-right: 6px;
+}
+.follow_link img{
+    margin-top: 66px;
+    margin-left: 10px;
+}
+.email_id{
+    margin-top: 24px;
+    height: 56px;
+    width: 527px;
+    border-radius: 5px;
+    position: relative;
+}
+::placeholder {
+    padding: 16px;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.5%;
+    font-weight: 400;
+}
+.last_submit{
+    border: 0;
+    background-color: hsl(60, 73%, 44%);
+    color: hsl(261, 100%, 18%);
+    padding-left: 24px;
+    padding-right: 24px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.5%;
+    font-weight: 500;
+    cursor: pointer;
+    position: absolute;
+    top: 72.5%;
+    left: 85%;
+}
 
